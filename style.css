@@ -68,6 +68,62 @@ main {
     text-align: center;
 }
 
+.carousel-section {
+    background-color: #ffffff;
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    height: 200px; /* Ajuste a altura conforme necessário */
+}
+
+.carousel-item {
+    display: none; /* Todos os itens começam como ocultos */
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel-item.active {
+    display: block; /* Somente o item ativo será exibido */
+}
+
+.carousel-image {
+    width: 10%; /* Ajusta a largura para 100% do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Adiciona borda arredondada se desejado */
+    margin-bottom: 10px; /* Espaço abaixo da imagem */
+}
+
+.carousel-indicators {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.indicator {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    background-color: #b9dff8;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.indicator:hover {
+    background-color: #96c7e7;
+}
+
+.indicator.active {
+    background-color: #60a5f8;
+    color: #fff;
+}
+
+
 .hero {
     display: flex;
     justify-content: space-between;
@@ -251,6 +307,7 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     border-radius: 10px;
+    position: relative;
 }
 
 h2 {
@@ -264,17 +321,6 @@ h3 {
     color: #8f8f8f;
 }
 
-.login-button {
-    width: 35%;
-    padding: 12px;
-    margin: 15px 0;
-    background-color: #4CAF50;
-    color: #ffffff;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    cursor: pointer;
-}
 
 .divider {
     display: flex;
@@ -336,4 +382,65 @@ h3 {
     border-radius: 18px;
     color: #8f8f8f;
     font-size: 1.2rem;
+}
+
+/* Adicionando estilo para os requisitos de senha */
+/* Estilo para os requisitos de senha - Centralizado e Fonte Menor */
+.password-requirements {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem; /* Fonte menor */
+    color: #666;
+}
+
+.password-requirements p {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o texto */
+    margin: 5px 0;
+}
+
+.requirement-icon {
+    font-size: 1rem; /* Reduz o tamanho dos ícones */
+    margin-right: 8px;
+}
+
+
+/* Estilo dos botões de ação */
+/* Ajustes para centralizar o botão CONTINUAR */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.back-button {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #e6e6e6;
+}
+
+.login-button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 35%;
+    max-width: 150px; /* Limita a largura máxima do botão */
+    text-align: center;
+}
+
+.login-button:hover {
+    background-color: #45a049;
 }

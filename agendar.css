@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fundo claro */
+}
+
+header {
+    background-color: #96c7e7; /* Cor de fundo do cabeçalho */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #286fb0; /* Linha na parte inferior */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a.button {
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+nav ul li a.button-primary {
+    background-color: #60a5f8;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.agendar-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.divisoria {
+    width: 2px; /* Largura da linha */
+    background-color: #286fb0; /* Cor da linha */
+    margin: 0 20px; /* Espaço nas laterais da linha */
+    border-radius: 5px; /* Borda arredondada para a linha */
+}
+
+.agenda {
+    width: 40%; /* Largura da coluna de agendamento */
+    margin-left: 20px;
+}
+
+.agenda h3 {
+    margin-bottom: 10px;
+}
+
+.agenda ul {
+    list-style: none; /* Remove as bolinhas da lista */
+    padding: 0;
+    margin: 0;
+}
+
+.agenda li {
+    padding: 10px 0; /* Espaçamento vertical */
+    display: flex;
+    justify-content: space-between; /* Espaço entre o dia e o horário */
+    align-items: center; /* Centraliza verticalmente o texto */
+    border-bottom: 1px solid #86c5f9; /* Cor da linha divisória */
+}
+
+.agenda li:last-child {
+    border-bottom: none; /* Remove a linha divisória do último item */
+}
+
+
+.hoje {
+    background-color: yellow; /* Destaque para o dia de hoje */
+    font-weight: bold; /* Negrito para chamar atenção */
+}
+
+.profissionais {
+    width: 50%; /* Largura da coluna de profissionais */
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+.profissionais h3 {
+    margin-bottom: 10px;
+}
+
+.profissional {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adiciona espaço entre os elementos */
+    margin-bottom: 2px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border-radius: 50px;
+    border: 2px solid #60c0ff;
+}
+
+.profissional .info {
+    flex: 1;
+}
+
+.preco {
+    background-color: #f3ff4c;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-left: auto; /* Alinha o botão à direita */
+    margin-right: 20px;
+}
+
+.profissional img {
+    width: 70px; /* Largura da imagem do profissional */
+    height: 70px; /* Altura da imagem do profissional */
+    border-radius: 50%; /* Imagem circular */
+    margin-right: 10px; /* Espaço à direita da imagem */
+    margin-left: 10px;
+}
+
+
+.dias-container {
+    background-color: #b5d4fa; /* Cor de fundo azul */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    color: white; /* Cor do texto */
+    margin-top: 20px; /* Espaço acima do contêiner */
+}
+
+.dias-container h3 {
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+}
+
+.dias-container ul {
+    list-style: none; /* Remove as bolinhas da lista */
+}
+
+.dias-container li {
+    padding: 10px 0; /* Espaçamento entre os dias */
+    display: flex;
+    justify-content: space-between; /* Espaço entre o dia e o horário */
+}
+
+.hoje {
+    background-color: rgb(221, 221, 0); /* Destaque para o dia de hoje */
+    font-weight: bold; /* Negrito para chamar atenção */
+    padding: 5px; /* Espaçamento interno ao redor do texto */
+    border-radius: 5px; /* Borda arredondada ao redor do destaque */
+    color: rgb(255, 232, 182);
+    margin-right: auto;
+    margin-left: 30px;
+}

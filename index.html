@@ -31,7 +31,7 @@
                     <li><img class="icon" src="images/shield.png"><strong> Profissionais de confiança, prontos para garantir a tranquilidade do seu lar.</strong></li>
                     <li><img class="icon" src="images/location.png"><strong> Exclusivo para Belo Horizonte, com disponibilidade rápida.</strong></li>
                 </ul>
-                <button class="services-button">Serviços</button>
+                <a href="opcoes.html" class="services-button">Serviços</a>
                 <div class="options">
                     <button class="option" onclick="showLar()">PARA O SEU LAR</button>
                     <button class="option" onclick="showEmpresa()">PARA SUA EMPRESA</button>
@@ -78,6 +78,32 @@
                 <button class="service-button">Agendar Serviço</button>
             </div>
         </section>
+
+        <section class="carousel-section">
+            <h2>Como Funciona?</h2>
+            <div class="carousel-indicators">
+                <span class="indicator active" onclick="goToSlide(0)">1ª Etapa</span>
+                <span class="indicator" onclick="goToSlide(1)">2ª Etapa</span>
+                <span class="indicator" onclick="goToSlide(2)">3ª Etapa</span>
+            </div>
+            <div class="carousel">
+                <div class="carousel-item active">
+                    <img src="images/limpeza1.png" alt="Limpeza" class="carousel-image">
+                    <h3>1ª Etapa</h3>
+                    <p>Escolha o tipo de Serviço<br>Na Data e no Horário que preferir! Tenha seu serviço realizado ainda hoje!</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/limpeza2.png" alt="Formas de Pagamento" class="carousel-image">
+                    <h3>2ª Etapa</h3>
+                    <p>Formas de Pagamento<br>A cobrança será feita após o serviço, via cartão de crédito, cartão de débito, pix, ou dinheiro.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/limpeza3.png" alt="Agendamento" class="carousel-image">
+                    <h3>3ª Etapa</h3>
+                    <p>Agora é só Agendar o seu Serviço<br>Logo, selecionamos profissionais ideais para você!</p>
+                </div>
+            </div>
+        </section>      
     </main>
 </body>
 </html>
