@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolher Profissional</title>
     <link rel="stylesheet" href="agendar.css"> <!-- Link para o arquivo CSS separado -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -16,8 +18,15 @@
             <ul>
                 <li><a href="#">Trabalhe no App</a></li>
                 <li><a href="#">Meu Lar</a></li>
-                <li><a href="login.html" class="button">Entrar</a></li>
-                <li><a href="cadastro.html" class="button button-primary">Cadastre-se</a></li>
+                <li><a href="login.html" class="button desktop-only">Entrar</a></li>
+                <li><a href="cadastro.html" class="button button-primary desktop-only">Cadastre-se</a></li>
+                <li class="user-icon mobile-only">
+                    <img src="images/user_icon.png" alt="User Icon" onclick="toggleDropdown()" />
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="login.html">Login</a>
+                        <a href="cadastro.html">Cadastro</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>

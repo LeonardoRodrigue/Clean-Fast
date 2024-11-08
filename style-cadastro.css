@@ -1,0 +1,117 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal para as telas de cadastro */
+.register-container {
+    width: 90%;
+    max-width: 700px; /* Limita a largura para evitar esticar em telas grandes */
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+/* Título e Subtítulo */
+.register-container h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    background-color: #60a5f8;
+    padding: 15px 0;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #286fb0;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Campos de entrada para informações residenciais */
+.input-field {
+    width: 100%;
+    padding: 4px; /* Reduz o padding para deixar as caixas mais finas */
+    margin: 20px 0; /* Aumenta o espaçamento entre as caixas */
+    border: 1.5px solid #b1b1b191;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-align: center;
+    position: relative;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo específico para campos de seleção */
+.input-field select {
+    width: 100%;
+    padding: 8px; /* Reduz o padding interno do select */
+    border: none;
+    background: none;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    appearance: none;
+    cursor: pointer;
+}
+
+.input-field select:focus {
+    outline: none;
+}
+
+/* Seta personalizada para o campo select */
+.input-field::after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: #333;
+    pointer-events: none;
+}
+
+/* Botão "SALVAR" para telas de cadastro */
+.save-button {
+    width: 70%;
+    max-width : 700px;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px auto 0;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #45a049;
+}
+
+/* Rodapé simples */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}

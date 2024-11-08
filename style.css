@@ -11,7 +11,7 @@ body {
 
 header {
     background-color: #96c7e7;
-    padding: 10px 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,46 +62,184 @@ nav ul li a.button-primary {
     color: #fff;
     border: 2px solid #fff;
 }
+/* Estilo do ícone do usuário */
+.user-icon img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
 
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    z-index: 10;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #60a5f8;
+    color: #fff;
+}
+
+/* Responsividade */
+.mobile-only {
+    display: none; /* Oculta elementos para desktop */
+}
+
+.desktop-only {
+    display: inline-block; /* Exibe normalmente em desktop */
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .logo {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Define o espaçamento entre os itens */
+        width: 100%;
+        justify-content: center; /* Centraliza os itens, opcional */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .desktop-only {
+        display: none; /* Oculta os botões de "Entrar" e "Cadastre-se" em telas pequenas */
+    }
+
+    .mobile-only {
+        display: inline-block; /* Exibe o ícone do usuário em telas pequenas */
+    }
+
+    .user-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
 main {
     padding: 20px;
     text-align: center;
 }
 
+/* Adicione ao style.css */
+
 .carousel-section {
     background-color: #ffffff;
-    padding: 100px;
+    padding: 40px 20px; /* Reduzido para dar mais espaço ao conteúdo */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+    text-align: center;
 }
 
 .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    overflow: hidden;
-    height: 200px; /* Ajuste a altura conforme necessário */
+    height: auto;
 }
 
 .carousel-item {
-    display: none; /* Todos os itens começam como ocultos */
-    text-align: center;
-    padding: 20px;
+    display: none;
+    align-items: center;
+    padding: 100px;
+    text-align: left; /* Alinhado à esquerda como no exemplo */
+    border: 1px solid #60a5f8; /* Bordas destacadas */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: auto;
 }
 
 .carousel-item.active {
-    display: block; /* Somente o item ativo será exibido */
+    display: flex;
 }
 
 .carousel-image {
-    width: 10%; /* Ajusta a largura para 100% do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    border-radius: 10px; /* Adiciona borda arredondada se desejado */
-    margin-bottom: 10px; /* Espaço abaixo da imagem */
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 40px; /* Espaço entre imagem e conteúdo */
 }
 
 .carousel-indicators {
     text-align: center;
     margin: 20px 0;
+}
+
+.carousel h3{
+    font-size: 1.8rem;
+    color: #286fb0;
+    font-weight: bold;
+    margin-bottom: 5px; /* Ajuste este valor para controlar o espaço abaixo do título */
+    padding-bottom: 0; /* Certifique-se de que o padding-bottom esteja em 0 */
+    margin-top: -150px;
+    white-space: nowrap; /* Impede a quebra de linha */
+}
+
+.carousel p{
+    margin-bottom: 5px; /* Ajuste este valor para controlar o espaço abaixo do título */
+    padding-bottom: 0; /* Certifique-se de que o padding-bottom esteja em 0 */
+    margin-left: -110px;
+}
+
+.carousel-item .services-button {
+    position: relative;
+    margin-top: 180px;
+    padding: 10px 20px;
+    background-color: #60a5f8;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    z-index: 1; /* Coloca o botão acima da "sombra" */
+}
+
+.carousel-item .services-button::before {
+    content: '';
+    position: absolute;
+    top: 5px; /* Move a "sombra" para baixo do botão */
+    left: 4px; /* Ajuste para posicionar horizontalmente */
+    width: 100%;
+    height: 100%;
+    background-color: #3f8cf1; /* Cor do quadrado de sombra */
+    border-radius: 5px;
+    z-index: -1; /* Coloca o quadrado atrás do botão */
+    transition: all 0.3s ease; /* Adiciona uma leve transição */
+    opacity: 0.8; /* Torna a sombra mais suave */
 }
 
 .indicator {
@@ -112,10 +250,6 @@ main {
     background-color: #b9dff8;
     color: #333;
     transition: background-color 0.3s;
-}
-
-.indicator:hover {
-    background-color: #96c7e7;
 }
 
 .indicator.active {
@@ -171,6 +305,7 @@ main {
     font-size: 1rem;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
 }
 
 .image-container {

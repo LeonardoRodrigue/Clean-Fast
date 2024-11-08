@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Residência</title>
+    <link rel="stylesheet" href="style-cadastro.css">
+</head>
+<body>
+
+    <div class="register-container">
+        <h2>Cadastro Residência</h2>
+        <div class="section-title">INFORMAÇÕES RESIDENCIAIS</div>
+
+        <form class="register-form">
+            <div class="input-field">
+                <select required>
+                    <option value="" disabled selected>tipo de residência</option>
+                    <option value="apartamento">Apartamento</option>
+                    <option value="casa">Casa</option>
+                    <option value="sobrado">Sobrado</option>
+                    <!-- Outros tipos de residência, se necessário -->
+                </select>
+            </div>
+
+            <div class="input-field">
+                <select required>
+                    <option value="" disabled selected>nº de banheiros</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4 ou mais</option>
+                </select>
+            </div>
+
+            <div class="input-field">
+                <select required>
+                    <option value="" disabled selected>nº de quartos</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4 ou mais</option>
+                </select>
+            </div>
+
+            <div class="input-field">
+                <select required>
+                    <option value="" disabled selected>área de lazer</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+            </div>
+
+            <div class="input-field">
+                <select required>
+                    <option value="" disabled selected>salas</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4 ou mais</option>
+                </select>
+            </div>
+
+            <button type="submit" class="save-button">SALVAR</button>
+        </form>
+
+        <footer>
+            <p>copyright © 2024</p>
+        </footer>
+    </div>
+
+</body>
+</html>

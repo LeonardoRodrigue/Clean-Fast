@@ -1,15 +1,17 @@
-let currentSlide = 0;
+
 let mostrandoLar = false;
 let mostrandoEmpresa = false;
+// Adicione ao script.js
+
+let currentSlide = 0;
+let intervalId;
 const slides = document.querySelectorAll('.carousel-item');
 const indicators = document.querySelectorAll('.indicator');
 
 function changeSlide() {
-    if (slides.length === 0) return; // Verifica se há slides
     slides[currentSlide].classList.remove('active');
     indicators[currentSlide].classList.remove('active');
 
-    // Incrementa o índice do slide e volta ao início se necessário
     currentSlide = (currentSlide + 1) % slides.length;
 
     slides[currentSlide].classList.add('active');
@@ -17,7 +19,8 @@ function changeSlide() {
 }
 
 function goToSlide(slideIndex) {
-    if (slideIndex < 0 || slideIndex >= slides.length) return; // Verifique se o índice é válido
+    clearInterval(intervalId); // Pausa o carrossel automático quando o usuário seleciona uma etapa
+
     slides[currentSlide].classList.remove('active');
     indicators[currentSlide].classList.remove('active');
 
@@ -25,17 +28,15 @@ function goToSlide(slideIndex) {
 
     slides[currentSlide].classList.add('active');
     indicators[currentSlide].classList.add('active');
+
+    intervalId = setInterval(changeSlide, 5000); // Reinicia o carrossel automático após a seleção
 }
 
-// Inicializa o carrossel
 document.addEventListener('DOMContentLoaded', () => {
-    if (slides.length > 0) {
-        slides[0].classList.add('active');
-        indicators[0].classList.add('active');
+    slides[0].classList.add('active');
+    indicators[0].classList.add('active');
 
-        // Muda de slide automaticamente a cada 5 segundos
-        setInterval(changeSlide, 1000);
-    }
+    intervalId = setInterval(changeSlide, 5000); // Troca de slide a cada 5 segundos
 });
 
 
@@ -66,3 +67,18 @@ function showEmpresa() {
         mostrandoLar = false; // Atualiza o estado do lar
     }
 }
+
+function toggleDropdown() {
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Fecha o dropdown ao clicar fora dele
+window.onclick = function(event) {
+    if (!event.target.matches('.user-icon img')) {
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        if (dropdownMenu.style.display === 'block') {
+            dropdownMenu.style.display = 'none';
+        }
+    }
+};
