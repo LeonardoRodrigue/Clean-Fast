@@ -679,6 +679,24 @@ footer {
         padding: 5px 8px; /* Ajuste de tamanho dos indicadores */
         font-size: 0.9rem; /* Ajuste do tamanho da fonte */
     }
+
+    .service-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .service-card {
+        width: 48%; /* Cada card ocupará cerca de metade da largura */
+        max-width: 180px; /* Limite de largura para evitar cards grandes */
+        margin: 5px; /* Reduz o espaço entre os cards */
+        box-sizing: border-box;
+    }
+
+    .service-card img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media (min-width: 769px) {
