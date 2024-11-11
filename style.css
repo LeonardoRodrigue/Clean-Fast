@@ -107,46 +107,6 @@ nav ul li a.button-primary {
     display: inline-block; /* Exibe normalmente em desktop */
 }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 10px;
-    }
-
-    .logo {
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 15px;
-        text-align: center;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        gap: 15px; /* Define o espaçamento entre os itens */
-        width: 100%;
-        justify-content: center; /* Centraliza os itens, opcional */
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
-
-    .desktop-only {
-        display: none; /* Oculta os botões de "Entrar" e "Cadastre-se" em telas pequenas */
-    }
-
-    .mobile-only {
-        display: inline-block; /* Exibe o ícone do usuário em telas pequenas */
-    }
-
-    .user-icon img {
-        width: 40px;
-        height: 40px;
-    }
-}
 main {
     padding: 20px;
     text-align: center;
@@ -172,60 +132,66 @@ main {
 }
 
 .carousel-item {
-    display: none;
-    align-items: center;
-    padding: 100px;
-    text-align: left; /* Alinhado à esquerda como no exemplo */
-    border: 1px solid #60a5f8; /* Bordas destacadas */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    margin: auto;
+    display: none; /* Todos os itens ficam ocultos por padrão */
 }
 
 .carousel-item.active {
     display: flex;
+    flex-direction: row; /* Alinha imagem e conteúdo lado a lado */
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
 }
 
 .carousel-image {
-    width: 400px;
-    height: auto;
-    border-radius: 10px;
-    margin-right: 40px; /* Espaço entre imagem e conteúdo */
+    width: 50%;
+    max-width: 400px;
+    margin-right: 20px; /* Espaço entre imagem e conteúdo */
 }
+
+.carousel-content h3 {
+    font-size: 1.5rem;
+    color: #286fb0;
+    margin: 0 0 10px 0;
+}
+
+.carousel-content p {
+    font-size: 1.1rem;
+    margin: 5px 0 15px 0;
+}
+
+.carousel-content .services-button {
+    margin-top: 10px;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+}
+
 
 .carousel-indicators {
     text-align: center;
     margin: 20px 0;
 }
 
-.carousel h3{
-    font-size: 1.8rem;
+
+.carousel h3 {
+    font-size: 1.3rem;
     color: #286fb0;
-    font-weight: bold;
-    margin-bottom: 5px; /* Ajuste este valor para controlar o espaço abaixo do título */
-    padding-bottom: 0; /* Certifique-se de que o padding-bottom esteja em 0 */
-    margin-top: -150px;
-    white-space: nowrap; /* Impede a quebra de linha */
+    margin: 5px 0; /* Ajuste o espaço acima e abaixo do título */
+    text-align: center;
 }
 
-.carousel p{
-    margin-bottom: 5px; /* Ajuste este valor para controlar o espaço abaixo do título */
-    padding-bottom: 0; /* Certifique-se de que o padding-bottom esteja em 0 */
-    margin-left: -110px;
+.carousel p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 5px 0; /* Ajuste o espaço acima e abaixo do texto */
+    padding: 0 10px;
 }
 
 .carousel-item .services-button {
-    position: relative;
-    margin-top: 180px;
+    margin-top: 10px; /* Espaço entre o texto e o botão */
     padding: 10px 20px;
-    background-color: #60a5f8;
-    color: #fff;
+    font-size: 1rem;
     border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    z-index: 1; /* Coloca o botão acima da "sombra" */
 }
 
 .carousel-item .services-button::before {
@@ -578,4 +544,194 @@ h3 {
 
 .login-button:hover {
     background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .logo {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Define o espaçamento entre os itens */
+        width: 100%;
+        justify-content: center; /* Centraliza os itens, opcional */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .desktop-only {
+        display: none; /* Oculta os botões de "Entrar" e "Cadastre-se" em telas pequenas */
+    }
+
+    .mobile-only {
+        display: inline-block; /* Exibe o ícone do usuário em telas pequenas */
+    }
+
+    .user-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .image-container {
+        display: none;
+    }
+
+    .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .carousel-item {
+        display: none; /* Esconde todos os itens por padrão */
+        flex-direction: column; /* Exibe a imagem acima do texto */
+        align-items: center; /* Centraliza os elementos no modo mobile */
+        padding: 20px;
+        width: 90%; /* Largura menor no mobile */
+        margin: 0 auto; /* Centraliza o item */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-item.active {
+        display: flex; /* Exibe apenas o item ativo */
+        flex-direction: column; /* Garante que a imagem fique acima do texto */
+        align-items: center;
+        text-align: center; /* Centraliza o texto e botão */
+    }
+
+    .carousel-image {
+        margin-bottom: 15px; /* Espaço entre a imagem e o título */
+        width: 100%;
+        max-width: 300px; /* Limita a largura da imagem em telas pequenas */
+        border-radius: 10px;
+    }
+
+    .carousel-content h3 {
+        font-size: 1.4rem;
+        color: #286fb0;
+        margin-bottom: 10px;
+    }
+
+    .carousel-content p {
+        font-size: 1rem;
+        line-height: 1.4;
+        color: #333;
+        margin: 10px 0;
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+
+    .carousel-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza todo o conteúdo dentro de .carousel-content */
+        text-align: center;
+    }
+    
+    .carousel-content .services-button {
+        margin-top: 25px; /* Aumente o espaçamento aqui */
+        padding: 10px 25px;
+        font-size: 1rem;
+        border-radius: 5px;
+        background-color: #60a5f8;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        width: auto;
+        align-self: center;
+        position: relative;
+        transform: translateX(-50%);
+        left: 50%;
+    }    
+    
+    .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 15px 0; /* Ajusta o espaçamento das indicações */
+    }
+
+    .indicator {
+        padding: 5px 8px; /* Ajuste de tamanho dos indicadores */
+        font-size: 0.9rem; /* Ajuste do tamanho da fonte */
+    }
+}
+
+@media (min-width: 769px) {
+    .carousel-item.active {
+        display: flex;
+        align-items: center;
+        padding: 40px;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .carousel-image {
+        width: 50%;
+        max-width: 500px;
+        align-self: flex-start;
+        margin-right: 20px;
+    }
+
+    .carousel-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .carousel-content h3 {
+        font-size: 1.5rem;
+        color: #286fb0;
+        margin-bottom: 10px;
+    }
+
+    .carousel-content p {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        color: #333;
+        margin-bottom: auto;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: auto;
+    }
+
+    .carousel-content .services-button {
+        margin-top: 20px;
+        align-self: flex-end;
+        padding: 10px 25px;
+        font-size: 1.1rem;
+        background-color: #60a5f8;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+    }
 }

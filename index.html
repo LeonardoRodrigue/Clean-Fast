@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -20,7 +22,7 @@
                 <li><a href="login.html" class="button desktop-only">Entrar</a></li>
                 <li><a href="cadastro.html" class="button button-primary desktop-only">Cadastre-se</a></li>
                 <li class="user-icon mobile-only">
-                    <img src="images/user_icon.png" alt="User Icon" onclick="toggleDropdown()" />
+                    <img src="images/perfil_icon.png" alt="User Icon" onclick="toggleDropdown()" />
                     <div class="dropdown-menu" id="dropdownMenu">
                         <a href="login.html">Login</a>
                         <a href="cadastro.html">Cadastro</a>
@@ -29,14 +31,16 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <section class="hero">
             <div class="hero-text">
                 <h2>Contrate diaristas qualificadas com praticidade e confiança</h2>
                 <ul>
-                    <li><img class="icon" src="images/shield.png"><strong> Profissionais de confiança, prontos para garantir a tranquilidade do seu lar.</strong></li>
-                    <li><img class="icon" src="images/location.png"><strong> Exclusivo para Belo Horizonte, com disponibilidade rápida.</strong></li>
+                    <li><img class="icon" src="images/shield.png"><strong> Profissionais de confiança, prontos para
+                            garantir a tranquilidade do seu lar.</strong></li>
+                    <li><img class="icon" src="images/location.png"><strong> Exclusivo para Belo Horizonte, com
+                            disponibilidade rápida.</strong></li>
                 </ul>
                 <a href="opcoes.html" class="services-button">Serviços</a>
                 <div class="options">
@@ -48,7 +52,7 @@
                 <img src="images/limpeza1.png" alt="Diaristas limpando">
             </div>
         </section>
-    
+
         <section id="lar-section" class="service-section" style="display:none;">
             <div class="service-card">
                 <img src="images/limpeza-pesada.png" alt="Limpeza Pesada">
@@ -75,7 +79,7 @@
                 <img src="images/Personal Organizer.png" alt="Personal Organizer">
                 <h3>Personal Organizer</h3>
                 <button class="service-button">Agendar Serviço</button>
-            </div> 
+            </div>
         </section>
 
         <section id="empresa-section" class="service-section" style="display:none;">
@@ -96,24 +100,41 @@
             <div class="carousel">
                 <div class="carousel-item active">
                     <img src="images/limpeza1.png" alt="Limpeza" class="carousel-image">
-                    <h3>1ª Etapa</h3>
-                    <p><br><br><br>Escolha o tipo de Serviço<br>Na Data e no Horário que preferir! Tenha seu serviço realizado ainda hoje!</p>
-                    <a href="opcoes.html" class="services-button">Serviços</a>
+                    <div class="carousel-content">
+                        <h3>1ª Etapa</h3>
+                        <p>Escolha o tipo de Serviço na Data e no Horário que preferir! Tenha seu serviço realizado ainda hoje!</p>
+                        <div class="button-container">
+                            <a href="opcoes.html" class="services-button">Serviços</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/limpeza2.png" alt="Formas de Pagamento" class="carousel-image">
-                    <h3>2ª Etapa</h3>
-                    <p><br><br><br>Formas de Pagamento<br>A cobrança será feita após o serviço, via cartão de crédito, cartão de débito, pix, ou dinheiro.</p>
-                    <a href="opcoes.html" class="services-button">Serviços</a>
+                    <div class="carousel-content">
+                        <h3>2ª Etapa</h3>
+                        <p>Formas de Pagamento<br>A cobrança será feita após o serviço, via cartão de crédito, cartão de débito, pix, ou dinheiro.</p>
+                        <div class="button-container">
+                            <a href="opcoes.html" class="services-button">Serviços</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/limpeza3.png" alt="Agendamento" class="carousel-image">
-                    <h3>3ª Etapa</h3>
-                    <p><br><br><br>Agora é só Agendar o seu Serviço<br>Logo, selecionamos profissionais ideais para você!</p>
-                    <a href="opcoes.html" class="services-button">Serviços</a>
+                    <div class="carousel-content">
+                        <h3>3ª Etapa</h3>
+                        <p>Agora é só Agendar o seu Serviço<br>Logo, selecionamos profissionais ideais para você!</p>
+                        <div class="button-container">
+                            <a href="opcoes.html" class="services-button">Serviços</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>     
+        </section>
     </main>
+    <!-- Rodapé -->
+    <footer>
+        <p>copyright © 2024</p>
+    </footer>
 </body>
+
 </html>

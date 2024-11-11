@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -21,7 +23,7 @@
                 <li><a href="login.html" class="button desktop-only">Entrar</a></li>
                 <li><a href="cadastro.html" class="button button-primary desktop-only">Cadastre-se</a></li>
                 <li class="user-icon mobile-only">
-                    <img src="images/user_icon.png" alt="User Icon" onclick="toggleDropdown()" />
+                    <img src="images/perfil_icon.png" alt="User Icon" onclick="toggleDropdown()" />
                     <div class="dropdown-menu" id="dropdownMenu">
                         <a href="login.html">Login</a>
                         <a href="cadastro.html">Cadastro</a>
@@ -47,9 +49,18 @@
                         <li>Domingo <span>09:00 - 19:00</span></li>
                     </ul>
                 </div>
-            </div>       
-            <div class="divisoria"></div> <!-- Linha divisória -->     
+            </div>
+            <div class="divisoria"></div> <!-- Linha divisória -->
             <div class="profissionais">
+
+                <!-- Filtros Superiores -->
+                <div class="filtros-superiores">
+                    <button class="filtro-btn ativo">Recomendadas</button>
+                    <button class="filtro-btn">Preço</button>
+                    <button class="filtro-btn">4H</button>
+                    <button class="filtro-btn">8H</button>
+                </div>
+
                 <h3>Recomendadas</h3>
                 <div class="profissional">
                     <img src="images/profissional1.png" alt="Ana Clara">
@@ -91,8 +102,33 @@
                     </div>
                     <button class="preco">R$70</button>
                 </div>
+
+                <!-- Seção dos filtros -->
+                <div class="filtros">
+                    <div class="filtro-item">
+                        <img src="images/diaristas_icon.png" alt="Diaristas">
+                        <p>Diaristas</p>
+                    </div>
+                    <div class="filtro-item">
+                        <img src="images/favoritas_icon.png" alt="Favoritas">
+                        <p>Favoritas</p>
+                    </div>
+                    <div class="filtro-item">
+                        <img src="images/historico_icon.png" alt="Histórico">
+                        <p>Histórico</p>
+                    </div>
+                    <div class="filtro-item">
+                        <img src="images/perfil_icon.png" alt="Perfil">
+                        <p>Perfil</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+    <!-- Rodapé -->
+    <footer>
+        <p>copyright © 2024</p>
+    </footer>
 </body>
+
 </html>

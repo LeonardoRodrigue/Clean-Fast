@@ -195,3 +195,164 @@ main {
     margin-right: auto;
     margin-left: 30px;
 }
+
+.filtros {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filtro-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #286fb0;
+    transition: color 0.3s;
+}
+
+.filtro-item p {
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #286fb0;
+    text-align: center;
+}
+
+.filtro-item:hover p,
+.filtro-item:hover img {
+    color: #ffb703;
+}
+
+.filtro-item img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 5px;
+    filter: grayscale(100%);
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.filtro-item:hover img {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.filtros-superiores {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+.filtro-btn {
+    background-color: #e0f0ff;
+    color: #286fb0;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filtro-btn:hover {
+    background-color: #60c0ff;
+    color: white;
+}
+
+.filtro-btn.ativo {
+    background-color: #286fb0;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Adiciona esta seção para esconder a agenda no modo mobile */
+@media (max-width: 768px) {
+    .agenda {
+        display: none; /* Esconde a agenda em telas menores */
+    }
+
+    /* Ajustes para a seção de profissionais no modo mobile */
+    .profissionais {
+        width: 100%;
+        margin: 0;
+    }
+
+    .profissionais h3 {
+        text-align: center;
+        font-size: 1.5rem; /* Tamanho maior para o título no mobile */
+        margin-bottom: 15px;
+    }
+
+    .profissional {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        border: none;
+        margin-bottom: 10px;
+    }
+
+    .profissional img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%; /* Imagem circular */
+        margin-right: 10px;
+    }
+
+    .divisoria {
+        display: none;
+    }
+
+    .info {
+        flex: 1;
+        font-size: 14px; /* Ajuste no tamanho da fonte para caber melhor */
+    }
+
+    .preco {
+        background-color: #f3ff4c;
+        color: #000;
+        padding: 10px 15px;
+        border-radius: 50px;
+        font-size: 16px;
+        margin-left: auto;
+    }
+
+    /* Ajustes para a barra inferior de navegação no mobile */
+    .filtros {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        margin-top: 15px;
+        border-top: 1px solid #ddd;
+        border-radius: 10px;
+    }
+
+    .filtro-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+        color: #286fb0;
+    }
+
+    .filtro-item img {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 5px;
+    }
+}
