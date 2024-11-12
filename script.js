@@ -115,8 +115,7 @@ function togglePasswordVisibility() {
 
 // Validação do checkbox antes de avançar
 function validarConcordo() {
-    const checkbox = document.getElementById("concordo");
-
+    const checkbox = document.getElementById("concordo"); 
     if (checkbox && checkbox.checked) {
         if (window.location.pathname.includes('cadastro-diarista4.html')) {
             window.location.href = 'cadastro-diarista5.html';
