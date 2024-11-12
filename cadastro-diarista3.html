@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Diarista</title>
+    <link rel="stylesheet" href="style-diaristas.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="register-container senha-container">
+    <header class="header">
+        <a href="index.html" class="back-button">←</a>
+        <h2>Olá, Diarista</h2>
+    </header>
+
+    <div class="section-title">Informações Pessoais</div>
+
+    <p class="question">Crie a senha da sua conta</p>
+    <p class="subtext">Sua senha deve ter pelo menos 8 caracteres, e pelo menos um número e um caractere não numérico</p>
+
+    <!-- Campo de senha com ícone de visibilidade -->
+    <div class="password-input-container">
+        <input type="password" id="password" class="input-field input-field-senha" placeholder="insira sua senha">
+        <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+    </div>
+
+    <!-- Requisitos de senha -->
+    <div class="password-requirements">
+        <p><span class="requirement-icon">❌</span> Tem no mínimo 8 caracteres?</p>
+        <p><span class="requirement-icon">❌</span> Tem um dígito?</p>
+        <p><span class="requirement-icon">✅</span> Tem um caractere não numérico?</p>
+    </div>
+
+    <!-- Botões para Continuar e Voltar -->
+    <div class="button-container">
+        <button class="back-nav" onclick="window.location.href='cadastro-diarista2.html'">←</button>
+        <button class="next-button" onclick="window.location.href='cadastro-diarista4.html'">AVANÇAR →</button>
+    </div>
+
+    <footer>copyright © 2024</footer>
+</div>
+
+</body>
+</html>

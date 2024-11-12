@@ -1,0 +1,476 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container principal */
+.register-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 35px;
+    margin-top: -40px;
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #60a5f8;
+    color: #ffffff;
+    border-radius: 15px 15px 0 0;
+    padding: 20px 0;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.back-button {
+    position: absolute;
+    left: 15px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+/* Título da seção */
+.section-title {
+    background-color: #286fb0;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 25px 0;
+    font-size: 1rem;
+}
+
+/* Texto da pergunta e subtexto */
+.question {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.subtext {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Campos de entrada - Geral */
+.input-field {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1.5px solid #b1b1b1;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Espaço entre as caixas e os botões */
+.input-field:last-of-type {
+    margin-bottom: 70px;
+}
+
+/* Botões de navegação */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-nav, .next-button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-nav {
+    background-color: #cccccc;
+    color: #333;
+}
+
+.next-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+.next-button:hover {
+    background-color: #45a049;
+}
+
+.back-nav:hover {
+    background-color: #b1b1b1;
+}
+
+/* Rodapé simples */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Versão desktop */
+@media (min-width: 768px) {
+    .register-container {
+        max-width: 500px;
+        padding: 40px;
+    }
+}
+
+/* ========================= */
+/* Estilos Exclusivos da Página de Criação de Senha */
+/* ========================= */
+
+/* Container da página de criação de senha */
+.senha-container .password-input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.senha-container .input-field-senha {
+    width: 100%;
+    padding: 15px 50px 15px 15px; /* Espaço à direita para o ícone */
+    border: 1.5px solid #b1b1b1;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-align: left;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.senha-container .toggle-password {
+    position: absolute;
+    right: 20px;
+    top: 40%; /* Ajustado para posicionar o ícone mais para cima */
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/* Estilo para os requisitos de senha */
+.senha-container .password-requirements {
+    text-align: left;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.senha-container .password-requirements p {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.senha-container .requirement-icon {
+    font-size: 1rem;
+    margin-right: 8px;
+}
+
+/* Botões de navegação */
+.senha-container .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px; /* Aumenta o espaço entre o texto e os botões */
+}
+
+.senha-container .back-nav, .senha-container .next-button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.senha-container .back-nav {
+    background-color: #cccccc;
+    color: #333;
+}
+
+.senha-container .next-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+.senha-container .next-button:hover {
+    background-color: #45a049;
+}
+
+.senha-container .back-nav:hover {
+    background-color: #b1b1b1;
+}
+
+/* ========================= */
+/* Estilos Exclusivos da Página de Termos e Condições */
+/* ========================= */
+
+.termos-container .terms-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.termos-container .terms-icon {
+    width: 130px; /* Aumenta o tamanho da imagem */
+    height: 130px;
+}
+
+.termos-container .question {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Estilo para o texto de Termos e Condições */
+.termos-container .subtext {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.termos-container .subtext a {
+    color: #286fb0;
+    text-decoration: underline;
+}
+
+/* Linha Divisória */
+.termos-container .divider {
+    width: 80%;
+    margin: 20px auto;
+    border: none;
+    border-top: 1px solid #b1b1b1;
+}
+
+/* Estilo da Caixa de Seleção */
+.termos-container .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.termos-container .checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.termos-container .checkbox-container label {
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* ========================= */
+/* Estilos Exclusivos da Página de Cadastro de Serviços */
+/* ========================= */
+
+.servicos-container .service-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os campos na tela */
+    gap: 15px;
+    margin: 20px 0; /* Reduz a margem para aproximar dos botões */
+}
+
+.servicos-container .select-field {
+    width: 80%; /* Reduz a largura para deixar o campo mais estreito */
+    max-width: 300px; /* Limita a largura máxima */
+    padding: 15px;
+    border: 1.5px solid #b1b1b1;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-align: left;
+    color: #666;
+    -webkit-appearance: none; /* Remove a aparência padrão do select */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"><polygon points="0,0 16,0 8,10"/></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-size: 12px;
+}
+
+.servicos-container .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -50px; /* Reduz a margem para aproximar dos campos */
+}
+
+.servicos-container .next-button {
+    width: 80%;
+    max-width: 200px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.servicos-container .next-button:hover {
+    background-color: #45a049;
+}
+
+/* ========================= */
+/* Estilos Exclusivos da Página de Carta de Recomendação */
+/* ========================= */
+
+.carta-container .recommendation-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.carta-container .recommendation-icon {
+    width: 130px; /* Aumenta o tamanho do ícone */
+    height: 130px;
+}
+
+.carta-container .question {
+    font-size: 1.4rem;
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Campo de seleção de arquivo */
+.carta-container .upload-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.carta-container .upload-field {
+    display: inline-block;
+    width: 80%;
+    max-width: 300px;
+    padding: 15px;
+    border: 1.5px solid #b1b1b1;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-align: center;
+    color: #666;
+    cursor: pointer; /* Mostra o cursor de mão para indicar que é clicável */
+}
+
+.carta-container .upload-field:hover {
+    background-color: #f0f0f0;
+}
+
+/* Termos de Uso e Privacidade */
+.carta-container .subtext {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    padding: 0 20px;
+}
+
+.carta-container .subtext a {
+    color: #286fb0;
+    text-decoration: underline;
+}
+
+/* Linha Divisória */
+.carta-container .divider {
+    width: 80%;
+    margin: 20px auto;
+    border: none;
+    border-top: 1px solid #b1b1b1;
+}
+
+/* Estilo da Caixa de Seleção */
+.carta-container .checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.carta-container .checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.carta-container .checkbox-container label {
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Botões de navegação */
+.carta-container .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.carta-container .back-nav, .carta-container .next-button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.carta-container .back-nav {
+    background-color: #cccccc;
+    color: #333;
+}
+
+.carta-container .next-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+.carta-container .next-button:hover {
+    background-color: #45a049;
+}
+
+.carta-container .back-nav:hover {
+    background-color: #b1b1b1;
+}

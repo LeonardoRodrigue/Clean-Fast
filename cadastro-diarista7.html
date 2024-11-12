@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Carta de Recomendação</title>
+    <link rel="stylesheet" href="style-diaristas.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="register-container carta-container">
+    <header class="header">
+        <a href="index.html" class="back-button">←</a>
+        <h2>Cadastro Serviços</h2>
+    </header>
+
+    <div class="section-title">Informações Pessoais</div>
+
+    <!-- Ícone e Texto de Carta de Recomendação -->
+    <div class="recommendation-content">
+        <img src="images/icon-recomendacao.png" alt="Ícone de Carta de Recomendação" class="recommendation-icon">
+        <p class="question">Envie aqui sua Carta de Recomendação</p>
+    </div>
+
+    <!-- Campo de Seleção de Arquivo -->
+    <div class="upload-container">
+        <label for="file-upload" class="upload-field">insira sua carta</label>
+        <input type="file" id="file-upload" name="file-upload" style="display: none;">
+    </div>
+
+    <!-- Termos de Uso e Privacidade -->
+    <p class="subtext">
+        Ao selecionar “Concordo” abaixo, confirmo que revisei e concordo com os 
+        <a href="termos-uso.html" target="_blank">Termos de uso</a> e reconheço o 
+        <a href="aviso-privacidade.html" target="_blank">Aviso de Privacidade</a>. 
+        Eu tenho pelo menos 18 anos.
+    </p>
+
+    <hr class="divider">
+
+    <!-- Caixa de Seleção de Concordância -->
+    <div class="checkbox-container">
+        <input type="checkbox" id="concordo" name="concordo">
+        <label for="concordo">Concordo</label>
+    </div>
+
+    <!-- Botões para Continuar e Voltar -->
+    <div class="button-container">
+        <button class="back-nav" onclick="window.location.href='cadastro-diarista6.html'">←</button>
+        <button class="next-button" onclick="validarConcordo()">AVANÇAR →</button>
+    </div>
+
+    <footer>copyright © 2024</footer>
+</div>
+
+</body>
+</html>

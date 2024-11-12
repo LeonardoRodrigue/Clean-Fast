@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Clean Fast</title>
+    <title>Cadastro - Diarista</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-
     <header>
         <div class="logo">
             <a href="index.html"><img src="images/logo.png" alt="Clean Fast Logo"></a>
@@ -33,21 +32,27 @@
 
     <div class="login-container">
         <div class="login-box">
-            <h2>Crie a senha da sua conta</h2>
-            <h3>Sua senha deve ter pelo menos 8 caracteres, e pelo<br> menos um número e um caractere não numérico</h3>
-            <input type="password" class="input-field-senha" placeholder="">
+            <h2>Olá, Diarista</h2>
+            <p>Qual é o seu número de telefone ou e-mail?</p>
+            <input type="text" class="input-field" placeholder="informar telefone ou e-mail">
 
-            <!-- Validação da Senha -->
-            <div class="password-requirements">
-                <p><span class="requirement-icon">❌</span> Tem no mínimo 8 caracteres?</p>
-                <p><span class="requirement-icon">❌</span> Tem um dígito?</p>
-                <p><span class="requirement-icon">✅</span> Tem um caractere não numérico?</p>
-            </div>
+            <br><br>
+            
+            <!-- Botão Continuar -->
+            <button class="login-button" onclick="window.location.href='cadastro-diarista2.html'">CONTINUAR</button>
 
-            <!-- Botões para Continuar e Voltar -->
-            <div class="button-container">
-                <a href="login.html" class="back-button">&#8592;</a>
-                <button class="login-button" onclick="window.location.href='cadastro2.html'">CONTINUAR</button>
+            <p class="divider">ou</p>
+
+            <!-- Botões de login social -->
+            <div class="social-login-container">
+                <div class="google-login">
+                    <img src="images/google_icon.png" alt="Google Icon">
+                    <span>Continuar com o Google</span>
+                </div>
+                <div class="apple-login">
+                    <img src="images/apple_icon.png" alt="Apple Icon">
+                    <span>Continuar com a Apple</span>
+                </div>
             </div>
         </div>
     </div>

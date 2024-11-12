@@ -554,6 +554,7 @@ footer {
 }
 
 
+/* VERSÃO PARA MOBILE */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -697,8 +698,149 @@ footer {
         width: 100%;
         height: auto;
     }
+
+    /* Ajusta o contêiner de login para centralizar e se ajustar ao tamanho da tela */
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Ocupa a altura total da tela */
+        padding: 10px;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 400px; /* Limita a largura máxima */
+        padding: 20px;
+        background-color: #f5f5f5;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    /* Ajusta o tamanho do título e subtítulo */
+    .login-box h2 {
+        font-size: 1.8rem; /* Reduz o tamanho do título */
+        margin-bottom: 10px;
+    }
+
+    .login-box h3 {
+        font-size: 1rem; /* Reduz o tamanho do subtítulo */
+        margin-bottom: 15px;
+    }
+
+    .login-box p {
+        font-size: 1rem; /* Tamanho de fonte adequado para dispositivos móveis */
+        margin-bottom: 15px;
+    }
+
+    /* Ajusta o campo de entrada */
+    .input-field {
+        width: 90%;
+        margin: 10px auto; /* Centraliza o campo de entrada */
+        font-size: 1rem; /* Reduz um pouco o tamanho da fonte */
+    }
+
+    /* Campo de entrada de senha */
+    .input-field-senha {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 25px;
+        text-align: center;
+    }
+
+    /* Requisitos de senha */
+    .password-requirements {
+        text-align: left;
+        margin-top: 15px;
+        font-size: 0.9rem;
+        color: #666;
+        padding-left: 10px;
+        margin-bottom: 80px; /* Adiciona espaçamento entre os requisitos e os botões */
+    }
+
+    .password-requirements p {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+        font-size: 0.9rem;
+    }
+
+    .requirement-icon {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+
+    /* Botões para continuar e voltar */
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .back-button {
+        font-size: 1.5rem;
+        color: #4CAF50;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: #e6e6e6;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-button {
+        padding: 10px 25px;
+        background-color: #4CAF50;
+        color: #ffffff;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 60%;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    /* Ajusta o contêiner de login social */
+    .social-login-container {
+        display: flex;
+        flex-direction: column; /* Alinha os botões verticalmente */
+        align-items: center; /* Centraliza os botões horizontalmente */
+        gap: 10px; /* Espaço entre os botões */
+        margin-top: 15px;
+        width: 100%; /* Garante que ocupe a largura total do contêiner pai */
+    }
+    
+    .google-login, .apple-login {
+        width: 90%; /* Ajusta a largura dos botões para caber melhor em telas menores */
+        max-width: 300px; /* Limita a largura máxima em telas maiores */
+        padding: 10px;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #ffffff;
+    }
+    /* Ajusta o tamanho e o espaçamento dos ícones sociais */
+    .google-login img, .apple-login img {
+        width: 24px; /* Reduz o tamanho dos ícones para caber melhor em dispositivos móveis */
+        margin-right: 8px;
+    }
 }
 
+
+/* VERSÃO PARA PC */
 @media (min-width: 769px) {
     .carousel-item.active {
         display: flex;
@@ -751,5 +893,15 @@ footer {
         color: #fff;
         border-radius: 5px;
         text-decoration: none;
+    }
+
+    .back-button {
+        align-self: flex-start;
+        margin-right: auto; /* Empurra o botão para o lado esquerdo */
+    }
+
+    .login-button {
+        align-self: flex-end;
+        margin-left: auto; /* Empurra o botão para o lado direito */
     }
 }

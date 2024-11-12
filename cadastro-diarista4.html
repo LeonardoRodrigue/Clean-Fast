@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Diarista</title>
+    <link rel="stylesheet" href="style-diaristas.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="register-container termos-container">
+    <header class="header">
+        <a href="index.html" class="back-button">←</a>
+        <h2>Olá, Diarista</h2>
+    </header>
+
+    <div class="section-title">Informações Pessoais</div>
+
+    <!-- Ícone e Texto de Termos e Condições -->
+    <div class="terms-content">
+        <img src="images/icon-termos.png" alt="Ícone de Termos" class="terms-icon">
+        <p class="question">Aceite os Termos e Condições e leia o Aviso de Privacidade da CleanFast</p>
+    </div>
+
+    <!-- Descrição dos Termos e Condições -->
+    <p class="subtext">
+        Ao selecionar “Concordo” abaixo, confirmo que revisei e concordo com os 
+        <a href="termos-uso.html" target="_blank">Termos de uso</a> e reconheço o 
+        <a href="aviso-privacidade.html" target="_blank">Aviso de Privacidade</a>. 
+        Eu tenho pelo menos 18 anos.
+    </p>
+
+    <!-- Linha e Check de Concordância -->
+    <hr class="divider">
+    <div class="checkbox-container">
+        <input type="checkbox" id="concordo" name="concordo">
+        <label for="concordo">Concordo</label>
+    </div>
+
+    <!-- Botões para Continuar e Voltar -->
+    <div class="button-container">
+        <button class="back-nav" onclick="window.location.href='cadastro-diarista3.html'">←</button>
+        <button class="next-button" onclick="validarConcordo()">AVANÇAR →</button>
+    </div>
+
+    <footer>copyright © 2024</footer>
+</div>
+
+</body>
+</html>

@@ -1,84 +1,129 @@
-
 let mostrandoLar = false;
 let mostrandoEmpresa = false;
-// Adicione ao script.js
-
 let currentSlide = 0;
 let intervalId;
-const slides = document.querySelectorAll('.carousel-item');
-const indicators = document.querySelectorAll('.indicator');
+
+// Controle de Slides
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.indicator');
+
+    if (slides.length && indicators.length) {
+        slides[0].classList.add('active');
+        indicators[0].classList.add('active');
+        intervalId = setInterval(changeSlide, 5000);
+    }
+});
 
 function changeSlide() {
-    slides[currentSlide].classList.remove('active');
-    indicators[currentSlide].classList.remove('active');
+    const slides = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.indicator');
 
-    currentSlide = (currentSlide + 1) % slides.length;
+    if (slides.length && indicators.length) {
+        slides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
 
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
 }
 
 function goToSlide(slideIndex) {
-    clearInterval(intervalId); // Pausa o carrossel automático quando o usuário seleciona uma etapa
+    clearInterval(intervalId);
+    const slides = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.indicator');
 
-    slides[currentSlide].classList.remove('active');
-    indicators[currentSlide].classList.remove('active');
+    if (slides.length && indicators.length) {
+        slides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
 
-    currentSlide = slideIndex;
+        currentSlide = slideIndex;
 
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
 
-    intervalId = setInterval(changeSlide, 5000); // Reinicia o carrossel automático após a seleção
+        intervalId = setInterval(changeSlide, 5000);
+    }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    slides[0].classList.add('active');
-    indicators[0].classList.add('active');
-
-    intervalId = setInterval(changeSlide, 5000); // Troca de slide a cada 5 segundos
-});
-
-
+// Controle de exibição das seções "Para o seu lar" e "Para sua empresa"
 function showLar() {
-    if (mostrandoLar) {
-        // Se já estiver mostrando, oculta a seção "Para o seu lar"
-        document.getElementById('lar-section').style.display = 'none';
-        mostrandoLar = false;
-    } else {
-        // Caso contrário, exibe a seção "Para o seu lar" e oculta a seção "Para sua empresa"
-        document.getElementById('lar-section').style.display = 'flex';
-        document.getElementById('empresa-section').style.display = 'none';
-        mostrandoLar = true;
-        mostrandoEmpresa = false; // Atualiza o estado da empresa
+    const larSection = document.getElementById('lar-section');
+    const empresaSection = document.getElementById('empresa-section');
+
+    if (larSection && empresaSection) {
+        if (mostrandoLar) {
+            larSection.style.display = 'none';
+            mostrandoLar = false;
+        } else {
+            larSection.style.display = 'flex';
+            empresaSection.style.display = 'none';
+            mostrandoLar = true;
+            mostrandoEmpresa = false;
+        }
     }
 }
 
 function showEmpresa() {
-    if (mostrandoEmpresa) {
-        // Se já estiver mostrando, oculta a seção "Para sua empresa"
-        document.getElementById('empresa-section').style.display = 'none';
-        mostrandoEmpresa = false;
-    } else {
-        // Caso contrário, exibe a seção "Para sua empresa" e oculta a seção "Para o seu lar"
-        document.getElementById('empresa-section').style.display = 'flex';
-        document.getElementById('lar-section').style.display = 'none';
-        mostrandoEmpresa = true;
-        mostrandoLar = false; // Atualiza o estado do lar
-    }
-}
+    const larSection = document.getElementById('lar-section');
+    const empresaSection = document.getElementById('empresa-section');
 
-function toggleDropdown() {
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-}
-
-// Fecha o dropdown ao clicar fora dele
-window.onclick = function(event) {
-    if (!event.target.matches('.user-icon img')) {
-        const dropdownMenu = document.getElementById('dropdownMenu');
-        if (dropdownMenu.style.display === 'block') {
-            dropdownMenu.style.display = 'none';
+    if (larSection && empresaSection) {
+        if (mostrandoEmpresa) {
+            empresaSection.style.display = 'none';
+            mostrandoEmpresa = false;
+        } else {
+            empresaSection.style.display = 'flex';
+            larSection.style.display = 'none';
+            mostrandoEmpresa = true;
+            mostrandoLar = false;
         }
     }
+}
+
+// Controle de dropdown
+function toggleDropdown() {
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    if (dropdownMenu) {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    }
+}
+
+window.onclick = function(event) {
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    if (dropdownMenu && !event.target.matches('.user-icon img')) {
+        dropdownMenu.style.display = 'none';
+    }
 };
+
+// Alternância de visibilidade da senha
+function togglePasswordVisibility() {
+    const passwordField = document.getElementById("password");
+    const passwordToggle = document.querySelector(".toggle-password");
+    if (passwordField && passwordToggle) {
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            passwordToggle.textContent = "🙈";
+        } else {
+            passwordField.type = "password";
+            passwordToggle.textContent = "👁️";
+        }
+    }
+}
+
+// Validação do checkbox antes de avançar
+function validarConcordo() {
+    const checkbox = document.getElementById("concordo");
+
+    if (checkbox && checkbox.checked) {
+        if (window.location.pathname.includes('cadastro-diarista4.html')) {
+            window.location.href = 'cadastro-diarista5.html';
+        } else if (window.location.pathname.includes('cadastro-diarista7.html')) {
+            window.location.href = 'opcoes.html';
+        }
+    } else {
+        alert("Por favor, aceite os Termos e Condições antes de continuar.");
+    }
+}
