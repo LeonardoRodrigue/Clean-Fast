@@ -392,6 +392,16 @@ main {
     align-items: center;
 }
 
+/* Estilos para requisitos válidos */
+.password-requirements p.valid {
+    color: green;
+}
+
+.requirement-icon {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
 .login-container {
     display: flex;
     justify-content: center;

@@ -127,3 +127,57 @@ function validarConcordo() {
         alert("Por favor, aceite os Termos e Condições antes de continuar.");
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const passwordInput = document.getElementById('password');
+    const lengthRequirement = document.getElementById('length-requirement');
+    const digitRequirement = document.getElementById('digit-requirement');
+    const nonDigitRequirement = document.getElementById('non-digit-requirement');
+
+    // Valida os requisitos conforme o usuário digita a senha
+    passwordInput.addEventListener('input', () => {
+        const password = passwordInput.value;
+        
+        // Verifica se tem pelo menos 8 caracteres
+        if (password.length >= 8) {
+            lengthRequirement.querySelector('.requirement-icon').textContent = '✅';
+            lengthRequirement.classList.add('valid');
+        } else {
+            lengthRequirement.querySelector('.requirement-icon').textContent = '❌';
+            lengthRequirement.classList.remove('valid');
+        }
+
+        // Verifica se tem pelo menos um dígito
+        if (/\d/.test(password)) {
+            digitRequirement.querySelector('.requirement-icon').textContent = '✅';
+            digitRequirement.classList.add('valid');
+        } else {
+            digitRequirement.querySelector('.requirement-icon').textContent = '❌';
+            digitRequirement.classList.remove('valid');
+        }
+
+        // Verifica se tem pelo menos um caractere não numérico
+        if (/[^\d]/.test(password)) {
+            nonDigitRequirement.querySelector('.requirement-icon').textContent = '✅';
+            nonDigitRequirement.classList.add('valid');
+        } else {
+            nonDigitRequirement.querySelector('.requirement-icon').textContent = '❌';
+            nonDigitRequirement.classList.remove('valid');
+        }
+    });
+});
+
+// Função para validar a senha antes de avançar
+function validarSenha() {
+    const lengthRequirement = document.getElementById('length-requirement');
+    const digitRequirement = document.getElementById('digit-requirement');
+    const nonDigitRequirement = document.getElementById('non-digit-requirement');
+
+    if (lengthRequirement.classList.contains('valid') &&
+        digitRequirement.classList.contains('valid') &&
+        nonDigitRequirement.classList.contains('valid')) {
+        window.location.href = 'cadastro2.html'; // Redireciona para a próxima página
+    } else {
+        alert("Por favor, preencha todos os requisitos da senha antes de continuar.");
+    }
+}

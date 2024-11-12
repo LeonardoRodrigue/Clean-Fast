@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
     <header>
@@ -35,24 +37,25 @@
         <div class="login-box">
             <h2>Crie a senha da sua conta</h2>
             <h3>Sua senha deve ter pelo menos 8 caracteres, e pelo<br> menos um número e um caractere não numérico</h3>
-            <input type="password" class="input-field-senha" placeholder="">
+            <input type="password" id="password" class="input-field-senha" placeholder="">
 
-            <!-- Validação da Senha -->
             <div class="password-requirements">
-                <p><span class="requirement-icon">❌</span> Tem no mínimo 8 caracteres?</p>
-                <p><span class="requirement-icon">❌</span> Tem um dígito?</p>
-                <p><span class="requirement-icon">✅</span> Tem um caractere não numérico?</p>
+                <p id="length-requirement"><span class="requirement-icon">❌</span> Tem no mínimo 8 caracteres?</p>
+                <p id="digit-requirement"><span class="requirement-icon">❌</span> Tem um dígito?</p>
+                <p id="non-digit-requirement"><span class="requirement-icon">❌</span> Tem um caractere não numérico?</p>
             </div>
 
-            <!-- Botões para Continuar e Voltar -->
+            <!-- Botão para Continuar e Voltar -->
             <div class="button-container">
                 <a href="login.html" class="back-button">&#8592;</a>
-                <button class="login-button" onclick="window.location.href='cadastro2.html'">CONTINUAR</button>
+                <button class="login-button" onclick="validarSenha()">CONTINUAR</button>
             </div>
+
         </div>
     </div>
 
     <footer>copyright © 2024</footer>
 
 </body>
+
 </html>
