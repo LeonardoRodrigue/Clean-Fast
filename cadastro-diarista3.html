@@ -28,15 +28,15 @@
 
     <!-- Requisitos de senha -->
     <div class="password-requirements">
-        <p><span class="requirement-icon">❌</span> Tem no mínimo 8 caracteres?</p>
-        <p><span class="requirement-icon">❌</span> Tem um dígito?</p>
-        <p><span class="requirement-icon">✅</span> Tem um caractere não numérico?</p>
+        <p id="length-requirement"><span class="requirement-icon">❌</span> Tem no mínimo 8 caracteres?</p>
+        <p id="digit-requirement"><span class="requirement-icon">❌</span> Tem um dígito?</p>
+        <p id="non-digit-requirement"><span class="requirement-icon">❌</span> Tem um caractere não numérico?</p>
     </div>
 
     <!-- Botões para Continuar e Voltar -->
     <div class="button-container">
         <button class="back-nav" onclick="window.location.href='cadastro-diarista2.html'">←</button>
-        <button class="next-button" onclick="window.location.href='cadastro-diarista4.html'">AVANÇAR →</button>
+        <button class="next-button" onclick="validarSenha()">AVANÇAR →</button>
     </div>
 
     <footer>copyright © 2024</footer>
