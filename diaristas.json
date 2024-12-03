@@ -1,0 +1,57 @@
+[
+    {
+        "id": "1",
+        "nome": "Ana Clara",
+        "foto": "images/profissional1.png",
+        "avaliacao": "⭐ 4,5 - há 1 ano - 2 recomendações",
+        "preco": "R$150",
+        "servicos": ["Limpeza de Casa", "Limpeza de Banheiro", "Lavagem de Roupas", "Organização de Ambientes"],
+        "localizacao": "Rua Rio de Janeiro, 600, Centro, Belo Horizonte",
+        "horarios": ["Segunda a Sexta: 09:00 - 19:00"],
+        "contato": "(31) 9 9876-5432"
+    },
+    {
+        "id": "2",
+        "nome": "Maria Eduarda",
+        "foto": "images/profissional2.png",
+        "avaliacao": "⭐ 4,3 - há 4 meses - 9 recomendações",
+        "preco": "R$140",
+        "servicos": ["Limpeza de Cozinha", "Organização de Ambientes", "Lavagem de Roupas"],
+        "localizacao": "Avenida Amazonas, 1234, Barro Preto, Belo Horizonte",
+        "horarios": ["Segunda a Sexta: 08:00 - 18:00"],
+        "contato": "(31) 9 8765-4321"
+    },
+    {
+        "id": "3",
+        "nome": "Judite Maria",
+        "foto": "images/profissional3.png",
+        "avaliacao": "⭐ 4,2 - há 1 mês - 10 recomendações",
+        "preco": "R$100",
+        "servicos": ["Limpeza de Casa", "Limpeza de Banheiro"],
+        "localizacao": "Rua da Bahia, 500, Lourdes, Belo Horizonte",
+        "horarios": ["Segunda a Sexta: 10:00 - 20:00"],
+        "contato": "(31) 9 7654-3210"
+    },
+    {
+        "id": "4",
+        "nome": "Cleusa Marques",
+        "foto": "images/profissional4.png",
+        "avaliacao": "⭐ 4,1 - há 7 meses - 7 recomendações",
+        "preco": "R$90",
+        "servicos": ["Limpeza Geral", "Lavagem de Roupas"],
+        "localizacao": "Rua São Paulo, 150, Funcionários, Belo Horizonte",
+        "horarios": ["Segunda a Sábado: 08:00 - 17:00"],
+        "contato": "(31) 9 6543-2109"
+    },
+    {
+        "id": "5",
+        "nome": "Juliana Dias",
+        "foto": "images/profissional5.png",
+        "avaliacao": "⭐ 4,0 - há 11 meses - 12 recomendações",
+        "preco": "R$70",
+        "servicos": ["Limpeza de Casa", "Limpeza de Banheiro", "Organização de Ambientes"],
+        "localizacao": "Rua Sapucaí, 300, Floresta, Belo Horizonte",
+        "horarios": ["Segunda a Sexta: 09:00 - 18:00"],
+        "contato": "(31) 9 5432-1098"
+    }
+]

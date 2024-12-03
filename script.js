@@ -91,7 +91,7 @@ function toggleDropdown() {
     }
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     const dropdownMenu = document.getElementById('dropdownMenu');
     if (dropdownMenu && !event.target.matches('.user-icon img')) {
         dropdownMenu.style.display = 'none';
@@ -115,7 +115,7 @@ function togglePasswordVisibility() {
 
 // Validação do checkbox antes de avançar
 function validarConcordo() {
-    const checkbox = document.getElementById("concordo"); 
+    const checkbox = document.getElementById("concordo");
     if (checkbox && checkbox.checked) {
         if (window.location.pathname.includes('cadastro-diarista4.html')) {
             window.location.href = 'cadastro-diarista5.html';
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Valida os requisitos conforme o usuário digita a senha
     passwordInput.addEventListener('input', () => {
         const password = passwordInput.value;
-        
+
         // Verifica se tem pelo menos 8 caracteres
         if (password.length >= 8) {
             lengthRequirement.querySelector('.requirement-icon').textContent = '✅';
@@ -180,3 +180,149 @@ function validarSenha() {
         alert("Por favor, preencha todos os requisitos da senha antes de continuar.");
     }
 }
+
+document.querySelectorAll('.filtro-item').forEach(function (button) {
+    button.addEventListener('click', function () {
+        // Obter o id da seção associada ao botão clicado
+        const sectionId = button.id.replace('toggle', '').toLowerCase(); // Modifica para pegar o ID correto
+
+        // Obter todas as seções
+        const sections = ['servicos', 'pacotes', 'assinaturas', 'avaliacoes'];
+
+        // Alterna a exibição da seção clicada
+        sections.forEach(function (section) {
+            var sectionElement = document.getElementById(section);
+
+            // Se o ID da seção for igual ao botão clicado, alterna a visibilidade
+            if (section === sectionId) {
+                if (sectionElement.style.display === 'none' || sectionElement.style.display === '') {
+                    sectionElement.style.display = 'block';
+                } else {
+                    sectionElement.style.display = 'none';
+                }
+            } else {
+                // Garante que as outras seções estejam ocultas
+                sectionElement.style.display = 'none';
+            }
+        });
+    });
+});
+
+/*window.onload = function() {
+    // Faz a requisição para o backend e preenche as diaristas na tela
+    fetch('/api/diaristas')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro na resposta da API');
+        }
+        return response.json();
+    })
+    .then(diaristas => {
+        console.log(diaristas);
+        const container = document.getElementById('diaristas-container');
+        diaristas.forEach(diarista => {
+            const div = document.createElement('div');
+            div.classList.add('profissional');
+            div.innerHTML = `
+                <img src="${diarista.imagem}" alt="${diarista.nome}">
+                <div class="info">
+                    <p>${diarista.nome}</p>
+                    <p>⭐ ${diarista.avaliacao} - ${diarista.tempo} - ${diarista.recomendacoes} recomendações</p>
+                </div>
+                <button class="preco">${diarista.preco}</button>
+            `;
+            container.appendChild(div);
+        });
+    })
+    .catch(error => console.error('Erro ao carregar as diaristas:', error));
+};*/
+
+function carregarDiaristas() {
+    fetch('diaristas.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao carregar dados das diaristas");
+            }
+            return response.json();
+        })
+        .then(diaristas => {
+            const container = document.querySelector('.profissionais');
+            container.innerHTML = ''; // Limpa o container antes de renderizar
+            diaristas.forEach(diarista => {
+                const div = document.createElement('div');
+                div.classList.add('profissional');
+
+                div.innerHTML = `
+                    <img src="${diarista.foto}" alt="${diarista.nome}">
+                    <div class="info">
+                        <p>${diarista.nome}</p>
+                        <p>${diarista.avaliacao}</p>
+                    </div>
+                    <button class="preco" onclick="verDetalhes('${diarista.id}')">${diarista.preco}</button>
+                `;
+                container.appendChild(div);
+            });
+        })
+        .catch(error => console.error("Erro ao carregar diaristas:", error));
+}
+
+function verDetalhes(id) {
+    window.location.href = `opcoes2.html?id=${encodeURIComponent(id)}`;
+}
+
+function carregarDetalhes() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const idDiarista = urlParams.get('id');
+
+    fetch('diaristas.json')
+        .then(response => response.json())
+        .then(diaristas => {
+            const diarista = diaristas.find(d => d.id === idDiarista);
+            if (diarista) {
+                // Atualizar as informações da diarista
+                document.querySelector('#foto-perfil').src = diarista.foto;
+                document.querySelector('#nome-diarista').textContent = diarista.nome;
+                document.querySelector('#avaliacao-diarista').textContent = diarista.avaliacao;
+                document.querySelector('#preco-diarista').textContent = diarista.preco;
+
+                // Exibir o endereço
+                document.querySelector('.localizacao p').textContent = diarista.localizacao;
+
+                // Exibir os serviços
+                const servicosContainer = document.querySelector('#servicos .servicos-container');
+                servicosContainer.innerHTML = ''; // Limpa os serviços antes de renderizar
+                diarista.servicos.forEach(servico => {
+                    const btn = document.createElement('button');
+                    btn.classList.add('servico-item');
+                    btn.textContent = servico;
+                    servicosContainer.appendChild(btn);
+                });
+            }
+        })
+        .catch(error => console.log(error));
+}
+
+
+function renderizarServicos(servicos) {
+    const servicosContainer = document.querySelector('#servicos .servicos-container');
+    servicosContainer.innerHTML = ''; // Limpa os serviços antes de renderizar
+    servicos.forEach(servico => {
+        const btn = document.createElement('button');
+        btn.classList.add('servico-item');
+        btn.textContent = servico;
+        servicosContainer.appendChild(btn);
+    });
+}
+
+// Executa funções ao carregar a página
+window.onload = function () {
+    const page = document.body.getAttribute('data-page');
+    if (page === 'opcoes') {
+        carregarDiaristas();
+    } else if (page === 'opcoes2') {
+        carregarDetalhes();
+    }
+};
+
+const loadingMessage = document.getElementById('loading-message');
+if (loadingMessage) loadingMessage.remove();

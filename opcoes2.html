@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Fast - Detalhes do Profissional</title>
+    <link rel="stylesheet" href="detalhes.css">
+    <link rel="stylesheet" href="style.css"> <!-- Integrando o cabeçalho do style.css -->
+    <script src="script.js" defer></script>
+</head>
+
+<body data-page="opcoes2">
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="Clean Fast Logo"></a>
+            <h1>Clean Fast</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trabalhe no App</a></li>
+                <li><a href="#">Meu Lar</a></li>
+                <li><a href="login.html" class="button desktop-only">Entrar</a></li>
+                <li><a href="cadastro.html" class="button button-primary desktop-only">Cadastre-se</a></li>
+                <li class="user-icon mobile-only">
+                    <img src="images/perfil_icon.png" alt="User Icon" />
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="login.html">Login</a>
+                        <a href="cadastro.html">Cadastro</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="layout">
+        <div class="left-column">
+            <!-- Caixa da Diarista com estilo baseado no CSS fornecido -->
+            <!-- Caixa da Diarista com estilo baseado no CSS fornecido -->
+            <div class="profissionais">
+                <h3>Profissional Selecionada</h3>
+                <div class="profissional">
+                    <img src="images/profissional1.png" alt="Foto da Diarista" class="foto-perfil" id="foto-perfil">
+                    <div class="info">
+                        <h4 id="nome-diarista">Ana Clara</h4>
+                        <p id="avaliacao-diarista">⭐ 4,5 - há 1 ano - 2 recomendações</p>
+                    </div>
+                    <button class="botao-preco" id="preco-diarista">R$150</button>
+                </div>
+            </div>
+
+
+            <!-- Logo abaixo da Diarista -->
+            <div class="logo-central">
+                <img src="images/logo.png" alt="Logo Clean Fast" class="logo-maior">
+                <h2>Clean Fast</h2>
+            </div>
+
+            <!-- Filtros com Divisórias -->
+            <div class="filtros-caixa">
+                <button class="filtro-item" id="toggleServicos">Serviços</button>
+                <div class="divisoria"></div>
+                <button class="filtro-item" id="togglePacotes">Pacotes</button>
+                <div class="divisoria"></div>
+                <button class="filtro-item" id="toggleAssinaturas">Assinaturas</button>
+                <div class="divisoria"></div>
+                <button class="filtro-item" id="toggleAvaliacoes">Avaliações</button>
+            </div>
+
+            <!-- Seção de Serviços da Diarista -->
+            <div id="servicos" class="servicos">
+                <h3>Serviços Disponíveis</h3>
+                <div class="servicos-container">
+                    <!-- Aqui os serviços serão dinamicamente preenchidos -->
+                </div>
+            </div>
+
+            <!-- Seção de Pacotes -->
+            <div id="pacotes" class="servicos">
+                <h3>Pacotes Disponíveis</h3>
+                <div class="servicos-container">
+                    <button class="servico-item">Limpeza Geral + Lavagem de Roupas</button>
+                </div>
+            </div>
+
+            <!-- Seção de Assinaturas -->
+            <div id="assinaturas" class="servicos">
+                <h3>Assinaturas Disponíveis</h3>
+                <div class="servicos-container">
+                    <button class="servico-item">Plano Básico (1/ 2x semana)</button>
+                    <button class="servico-item">Plano Sênior (1/ 1x semana)</button>
+                </div>
+            </div>
+
+            <div id="avaliacoes" class="servicos">
+                <h3>Avaliações</h3>
+                <div class="servicos-container">
+                    <p>Nenhuma avaliação registrada.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <!-- Localização e Horários -->
+            <div class="localizacao-horarios">
+                <div class="localizacao">
+                    <h3>Localização</h3>
+                    <p></p> <!-- Endereço será preenchido aqui -->
+                </div>
+                <br>
+                <hr>
+                <h3><br>Horário de Atendimento</h3>
+                <ul>
+                    <li class="nao-disponivel">
+                        <span>Segunda-feira</span>
+                        <span>09:00 - 19:00</span>
+                    </li>
+                    <li class="nao-disponivel">
+                        <span>Terça-feira</span>
+                        <span>09:00 - 19:00</span>
+                    </li>
+                    <li class="hoje">
+                        <span>Quarta-feira</span>
+                        <span>09:00 - 19:00</span>
+                    </li>
+                    <li class="nao-disponivel">
+                        <span>Quinta-feira</span>
+                        <span>09:00 - 19:00</span>
+                    </li>
+                    <li class="hoje">
+                        <span>Sexta-feira</span>
+                        <span>09:00 - 19:00</span>
+                    </li>
+                    <li class="hoje">
+                        <span>Sabado</span>
+                        <span>09:00 - 19:00</span>
+                    </li>
+                    <li class="nao-disponivel">
+                        <span>Domingo</span>
+                        <span>09:00 - 19:00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-down-column">
+            <!-- Localização e Horários -->
+            <div class="pagamentos-midias-contato">
+                <h3>Forma de Pagamento</h3>
+                <div class="pagamento-buttons">
+                    <button class="payment-button">Dinheiro</button>
+                    <button class="payment-button">Cartão de Crédito</button>
+                    <button class="payment-button">Cartão de Débito</button>
+                </div>
+                <hr>
+
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://wa.me/3198765432" target="_blank">
+                        <img src="images/whatsapp.png" alt="WhatsApp">
+                    </a>
+                </div>
+                <hr>
+
+                <h3>Contato</h3>
+                <div class="contact-info">
+                    <span class="contact-icon"><img src="images/telefone.png" alt="Telefone"></span>
+                    <p>(31) 9 9876-5432</p>
+                </div>
+                <div class="contact-info">
+                    <span class="contact-icon"><img src="images/celular.png" alt="Telefone"></span>
+                    <p>(31) 9 9876-5432</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>copyright © 2024</p>
+    </footer>
+</body>
+
+</html>

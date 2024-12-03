@@ -1,0 +1,435 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f6faff;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #286fb0;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+/* Ajustando o contêiner pai para o layout flexível */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Alinha os itens ao final (direita) */
+    gap: 30px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+}
+
+.botao-entrar {
+    background-color: white;
+    color: #286fb0;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.botao-cadastro {
+    background-color: #ffc107;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.layout {
+    display: flex;
+    flex-wrap: wrap; /* Garante que os itens se movam para baixo quando não houver espaço */
+    justify-content: space-between;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+}
+
+/* Coluna da Esquerda */
+.left-column {
+    flex: 0 0 55%; /* 55% de largura para a coluna da esquerda */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Profissional Selecionado */
+.profissionais {
+    width: 100%; /* Largura da coluna de profissionais */
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+.profissionais h3 {
+    margin-bottom: 10px;
+}
+
+.profissional {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adiciona espaço entre os elementos */
+    margin-bottom: 2px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 50px;
+    border: 2px solid #60c0ff;
+}
+
+.profissional .foto-perfil {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.profissional .info {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.profissional h4 {
+    font-size: 1.2rem;
+    color: #286fb0;
+}
+
+.profissional p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.botao-preco {
+    background-color: #ffc107;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    font-size: 1rem;
+}
+
+/* Logo abaixo da Diarista */
+.logo-central {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo-maior {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.logo-central h2 {
+    font-size: 1.8rem;
+    color: #286fb0;
+}
+
+/* Filtros em Caixa com Divisórias */
+.filtros-caixa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #60c0ff;
+    border-radius: 50px;
+}
+
+.filtro-item {
+    background: none;
+    border: none;
+    color: #286fb0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.filtro-item:hover {
+    text-decoration: underline;
+}
+
+.divisoria {
+    height: 20px;
+    width: 1px;
+    background-color: #286fb0;
+}
+
+/* Barra de Pesquisa */
+.pesquisa {
+    text-align: center;
+}
+
+.pesquisa input {
+    width: 85%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1.1rem;
+}
+
+/* Coluna da Direita - ajustada para ir para baixo */
+.right-column {
+    flex: 0 0 40%; /* 40% de largura da tela */
+    padding: 20px;
+    margin-top: 20px; /* Garante que a coluna da direita fique abaixo */
+}
+
+.right-down-column {
+    margin-left: auto;
+    flex: 0 0 40%; /* 40% de largura da tela */
+    padding: 20px;
+    position: sticky;
+}
+
+/* Localização e Horários - Ajustado */
+.localizacao-horarios {
+    background-color: #eaf4ff;
+    padding: 30px;
+    border-radius: 50px;
+    border: 2px solid #60c0ff;
+    width: 100%; /* Diminuí a largura da caixa */
+    max-width: 500px; /* Limitei a largura máxima */
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionei uma sombra para dar mais destaque */
+}
+
+.localizacao-horarios h3 {
+    color: #286fb0;
+    margin-bottom: 15px; /* Aumentei o espaçamento abaixo do título */
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.localizacao-horarios ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1px; /* Aumentei o espaçamento entre o título e a lista */
+}
+
+.localizacao-horarios ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px; /* Mais espaçamento entre os dias */
+    font-size: 1.1rem;
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Divisória entre os dias */
+}
+
+.localizacao-horarios ul .hoje {
+    background-color: #add8e6;
+    border-radius: 5px;
+    padding: 5px 12px;
+    font-weight: bold;
+}
+
+/* Estilos para os dias de não disponibilidade (segunda, terça, quinta, domingo) */
+.localizacao-horarios ul .nao-disponivel {
+    background-color: #f0f0f0; /* Cor de fundo cinza claro */
+    color: #999; /* Cor do texto em cinza */
+    font-weight: normal;
+}
+
+.localizacao-horarios ul li:last-child {
+    border-bottom: none; /* Remove divisória na última linha */
+    margin-bottom: -15px;
+}
+
+.localizacao-horarios ul li span {
+    font-weight: normal;
+    color: #666;
+}
+
+/* Estilo para a seção de serviços */
+.servicos {
+    background-color: #ffffff;  /* Fundo branco */
+    padding: 20px;               /* Espaçamento interno */
+    border-radius: 10px;         /* Bordas arredondadas */
+    border: 2px solid #60c0ff;   /* Borda azul claro */
+    margin-top: 20px;            /* Espaçamento superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para dar profundidade */
+    transition: all 0.3s ease-in-out; /* Transição suave */
+    display: none;               /* Inicialmente oculto */
+}
+
+/* Título da Seção de Serviços */
+.servicos h3 {
+    color: #286fb0;            /* Cor do texto em azul */
+    font-size: 1.6rem;         /* Tamanho do título */
+    margin-bottom: 15px;       /* Espaçamento abaixo do título */
+    font-weight: bold;         /* Título em negrito */
+}
+
+/* Contêiner para os botões de serviços */
+.servicos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;                  /* Espaçamento entre os botões */
+}
+
+/* Estilo para cada botão de serviço */
+.servico-item {
+    background-color: #f0f9ff;  /* Fundo azul claro */
+    color: #286fb0;             /* Cor do texto azul */
+    border: 1px solid #60c0ff;  /* Borda azul */
+    padding: 12px 20px;         /* Espaçamento interno */
+    border-radius: 25px;        /* Bordas arredondadas */
+    font-size: 1.2rem;          /* Tamanho da fonte */
+    text-align: center;         /* Centraliza o texto */
+    cursor: pointer;           /* Cursor em forma de mão */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeito de transição */
+    width: 100%;                /* Largura total */
+    box-sizing: border-box;     /* Para garantir que o padding seja levado em conta na largura */
+}
+
+/* Efeito de hover nos botões */
+.servico-item:hover {
+    background-color: #60c0ff;  /* Fundo azul mais escuro */
+    color: white;               /* Cor do texto em branco */
+    transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+/* Forma de Pagamento e Contato - Ajustado */
+.pagamentos-midias-contato {
+    background-color: #eaf4ff;
+    padding: 30px;
+    border-radius: 50px;
+    border: 2px solid #60c0ff;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título da forma de pagamento e redes sociais */
+.pagamentos-midias-contato h3 {
+    color: #286fb0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+/* Estilos para os botões de pagamento */
+.payment-button {
+    background-color: #286fb0;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: 100%; /* Botões ocupando toda a largura disponível */
+    text-align: center;
+}
+
+.payment-button:hover {
+    background-color: #1e4f8b; /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilo para os ícones das redes sociais */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Efeito de aumentar ao passar o mouse */
+}
+
+/* Estilo para os números de contato */
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.contact-info .contact-icon {
+    margin-right: 10px;
+}
+
+.contact-info img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Ajuste do layout no celular (responsivo) */
+@media (max-width: 600px) {
+    .payment-button {
+        width: 100%; /* Botões ocupando toda a largura disponível em dispositivos móveis */
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+}
+
+
+/* Responsividade para garantir que os botões fiquem em uma única coluna */
+@media (min-width: 768px) {
+    .servicos-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .servico-item {
+        width: 45%;             /* Para telas grandes, cada botão terá metade da largura */
+        margin-bottom: 15px;    /* Espaçamento entre os botões */
+    }
+}
+
+@media (max-width: 768px) {
+    .servico-item {
+        width: 100%;            /* Para telas pequenas, cada botão ocupa 100% */
+    }
+    
+    .right-column {
+        flex: 1 0 100%; /* A coluna direita ocupa 100% da largura em telas pequenas */
+        margin-top: 20px; /* Adiciona margem superior para garantir espaçamento */
+    }
+
+    .layout {
+        flex-direction: column; /* Faz a disposição das colunas ser em coluna em telas pequenas */
+    }
+}

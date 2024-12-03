@@ -10,7 +10,7 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body data-page="opcoes">
     <header>
         <div class="logo">
             <a href="index.html"><img src="images/logo.png" alt="Clean Fast Logo"></a>
@@ -52,7 +52,6 @@
             </div>
             <div class="divisoria"></div> <!-- Linha divisória -->
             <div class="profissionais">
-
                 <!-- Filtros Superiores -->
                 <div class="filtros-superiores">
                     <button class="filtro-btn ativo">Recomendadas</button>
@@ -60,69 +59,12 @@
                     <button class="filtro-btn">4H</button>
                     <button class="filtro-btn">8H</button>
                 </div>
-
+            
                 <h3>Recomendadas</h3>
-                <div class="profissional">
-                    <img src="images/profissional1.png" alt="Ana Clara">
-                    <div class="info">
-                        <p>Ana Clara</p>
-                        <p>⭐ 4,5 - há 1 ano - 2 recomendações</p>
-                    </div>
-                    <button class="preco">R$150</button>
+                <div id="lista-profissionais">
+                    <!-- Profissionais serão carregados aqui dinamicamente -->
                 </div>
-                <div class="profissional">
-                    <img src="images/profissional2.png" alt="Maria Eduarda">
-                    <div class="info">
-                        <p>Maria Eduarda</p>
-                        <p>⭐ 4,3 - há 4 meses - 9 recomendações</p>
-                    </div>
-                    <button class="preco">R$140</button>
-                </div>
-                <div class="profissional">
-                    <img src="images/profissional3.png" alt="Judite Maria">
-                    <div class="info">
-                        <p>Judite Maria</p>
-                        <p>⭐ 4,2 - há 1 mês - 10 recomendações</p>
-                    </div>
-                    <button class="preco">R$100</button>
-                </div>
-                <div class="profissional">
-                    <img src="images/profissional4.png" alt="Cleusa Marques">
-                    <div class="info">
-                        <p>Cleusa Marques</p>
-                        <p>⭐ 4,1 - há 7 meses - 7 recomendações</p>
-                    </div>
-                    <button class="preco">R$90</button>
-                </div>
-                <div class="profissional">
-                    <img src="images/profissional5.png" alt="Juliana Dias">
-                    <div class="info">
-                        <p>Juliana Dias</p>
-                        <p>⭐ 4,0 - há 11 meses - 12 recomendações</p>
-                    </div>
-                    <button class="preco">R$70</button>
-                </div>
-
-                <!-- Seção dos filtros -->
-                <div class="filtros">
-                    <div class="filtro-item">
-                        <img src="images/diaristas_icon.png" alt="Diaristas">
-                        <p>Diaristas</p>
-                    </div>
-                    <div class="filtro-item">
-                        <img src="images/favoritas_icon.png" alt="Favoritas">
-                        <p>Favoritas</p>
-                    </div>
-                    <div class="filtro-item">
-                        <img src="images/historico_icon.png" alt="Histórico">
-                        <p>Histórico</p>
-                    </div>
-                    <div class="filtro-item">
-                        <img src="images/perfil_icon.png" alt="Perfil">
-                        <p>Perfil</p>
-                    </div>
-                </div>
-            </div>
+            </div>            
         </section>
     </main>
     <!-- Rodapé -->
