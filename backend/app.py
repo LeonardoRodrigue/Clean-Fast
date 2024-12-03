@@ -1,114 +1,151 @@
-from flask import Flask, render_template, jsonify
+import tkinter as tk
+from tkinter import messagebox
+import threading
 import json
 
-app = Flask(__name__)
+class App:
+    def __init__(self, root):
+        self.root = root
+        self.mostrandoLar = False
+        self.mostrandoEmpresa = False
+        self.currentSlide = 0
+        self.slides = []
+        self.indicators = []
+        self.intervalId = None
 
-# Dados das diaristas (podem ser extraídos de um banco de dados ou um arquivo JSON)
-diaristas = [
-    {
-        'id': 1,
-        'nome': 'Ana Clara',
-        'imagem': 'images/profissional1.png',
-        'avaliacao': 4.5,
-        'tempo': 'há 1 ano',
-        'recomendacoes': 2,
-        'preco': 'R$150'
-    },
-    {
-        'id': 2,
-        'nome': 'Maria Eduarda',
-        'imagem': 'images/profissional2.png',
-        'avaliacao': 4.3,
-        'tempo': 'há 4 meses',
-        'recomendacoes': 9,
-        'preco': 'R$140'
-    },
-    {
-        'id': 3,
-        'nome': 'Judite Maria',
-        'imagem': 'images/profissional3.png',
-        'avaliacao': 4.2,
-        'tempo': 'há 1 mês',
-        'recomendacoes': 10,
-        'preco': 'R$100'
-    },
-    {
-        'id': 4,
-        'nome': 'Cleusa Marques',
-        'imagem': 'images/profissional4.png',
-        'avaliacao': 4.1,
-        'tempo': 'há 7 meses',
-        'recomendacoes': 7,
-        'preco': 'R$90'
-    },
-    {
-        'id': 5,
-        'nome': 'Juliana Dias',
-        'imagem': 'images/profissional5.png',
-        'avaliacao': 4.0,
-        'tempo': 'há 11 meses',
-        'recomendacoes': 12,
-        'preco': 'R$70'
-    }
-]
+        self.setup_ui()
+        self.start_slideshow()
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+    def setup_ui(self):
+        self.root.title("Carousel and Sections")
+        self.root.geometry("600x400")
 
-from flask import jsonify
+        # Slides setup
+        colors = ['red', 'green', 'blue']
+        for color in colors:
+            slide = tk.Frame(self.root, bg=color, width=600, height=200)
+            slide.place(x=0, y=0)
+            slide.lower()
+            self.slides.append(slide)
 
-@app.route('/api/diaristas')
-def get_diaristas():
-    diaristas = [
-    {
-        'id': 1,
-        'nome': 'Ana Clara',
-        'imagem': 'images/profissional1.png',
-        'avaliacao': 4.5,
-        'tempo': 'há 1 ano',
-        'recomendacoes': 2,
-        'preco': 'R$150'
-    },
-    {
-        'id': 2,
-        'nome': 'Maria Eduarda',
-        'imagem': 'images/profissional2.png',
-        'avaliacao': 4.3,
-        'tempo': 'há 4 meses',
-        'recomendacoes': 9,
-        'preco': 'R$140'
-    },
-    {
-        'id': 3,
-        'nome': 'Judite Maria',
-        'imagem': 'images/profissional3.png',
-        'avaliacao': 4.2,
-        'tempo': 'há 1 mês',
-        'recomendacoes': 10,
-        'preco': 'R$100'
-    },
-    {
-        'id': 4,
-        'nome': 'Cleusa Marques',
-        'imagem': 'images/profissional4.png',
-        'avaliacao': 4.1,
-        'tempo': 'há 7 meses',
-        'recomendacoes': 7,
-        'preco': 'R$90'
-    },
-    {
-        'id': 5,
-        'nome': 'Juliana Dias',
-        'imagem': 'images/profissional5.png',
-        'avaliacao': 4.0,
-        'tempo': 'há 11 meses',
-        'recomendacoes': 12,
-        'preco': 'R$70'
-    }
-]
-    return jsonify(diaristas)
+            indicator = tk.Label(self.root, text='•', font=('Arial', 24))
+            indicator.pack(side=tk.LEFT)
+            self.indicators.append(indicator)
 
+        self.slides[0].lift()
+        self.indicators[0].config(fg='black')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+        # Buttons to control slides
+        tk.Button(self.root, text="Previous Slide", command=self.prev_slide).pack(side=tk.LEFT)
+        tk.Button(self.root, text="Next Slide", command=self.next_slide).pack(side=tk.LEFT)
+
+        # Sections for 'Lar' and 'Empresa'
+        self.larSection = tk.Frame(self.root, bg='lightblue', width=600, height=200)
+        self.empresaSection = tk.Frame(self.root, bg='lightgreen', width=600, height=200)
+
+        tk.Button(self.root, text="Show Lar", command=self.show_lar).pack(side=tk.LEFT)
+        tk.Button(self.root, text="Show Empresa", command=self.show_empresa).pack(side=tk.LEFT)
+
+        # Password validation setup
+        self.passwordInput = tk.Entry(self.root, show='*')
+        self.passwordInput.pack()
+        self.passwordInput.bind('<KeyRelease>', self.validate_password)
+
+        self.lengthRequirement = tk.Label(self.root, text="At least 8 characters ❌")
+        self.lengthRequirement.pack()
+        self.digitRequirement = tk.Label(self.root, text="At least one digit ❌")
+        self.digitRequirement.pack()
+        self.nonDigitRequirement = tk.Label(self.root, text="At least one non-digit ❌")
+        self.nonDigitRequirement.pack()
+
+        tk.Button(self.root, text="Validate Password", command=self.validar_senha).pack()
+
+    def start_slideshow(self):
+        self.intervalId = threading.Timer(5, self.change_slide)
+        self.intervalId.start()
+
+    def change_slide(self):
+        self.slides[self.currentSlide].lower()
+        self.indicators[self.currentSlide].config(fg='grey')
+
+        self.currentSlide = (self.currentSlide + 1) % len(self.slides)
+
+        self.slides[self.currentSlide].lift()
+        self.indicators[self.currentSlide].config(fg='black')
+
+        self.start_slideshow()
+
+    def prev_slide(self):
+        if self.intervalId:
+            self.intervalId.cancel()
+        self.slides[self.currentSlide].lower()
+        self.indicators[self.currentSlide].config(fg='grey')
+
+        self.currentSlide = (self.currentSlide - 1) % len(self.slides)
+
+        self.slides[self.currentSlide].lift()
+        self.indicators[self.currentSlide].config(fg='black')
+
+        self.start_slideshow()
+
+    def next_slide(self):
+        if self.intervalId:
+            self.intervalId.cancel()
+        self.change_slide()
+
+    def show_lar(self):
+        if self.mostrandoLar:
+            self.larSection.lower()
+            self.mostrandoLar = False
+        else:
+            self.larSection.lift()
+            self.empresaSection.lower()
+            self.mostrandoLar = True
+            self.mostrandoEmpresa = False
+
+    def show_empresa(self):
+        if self.mostrandoEmpresa:
+            self.empresaSection.lower()
+            self.mostrandoEmpresa = False
+        else:
+            self.empresaSection.lift()
+            self.larSection.lower()
+            self.mostrandoEmpresa = True
+            self.mostrandoLar = False
+
+    def validate_password(self, event):
+        password = self.passwordInput.get()
+        length_req = len(password) >= 8
+        digit_req = any(char.isdigit() for char in password)
+        non_digit_req = any(not char.isdigit() for char in password)
+
+        self.lengthRequirement.config(text=f"At least 8 characters {'✅' if length_req else '❌'}")
+        self.digitRequirement.config(text=f"At least one digit {'✅' if digit_req else '❌'}")
+        self.nonDigitRequirement.config(text=f"At least one non-digit {'✅' if non_digit_req else '❌'}")
+
+    def validar_senha(self):
+        password = self.passwordInput.get()
+        length_req = len(password) >= 8
+        digit_req = any(char.isdigit() for char in password)
+        non_digit_req = any(not char.isdigit() for char in password)
+
+        if length_req and digit_req and non_digit_req:
+            messagebox.showinfo("Success", "Password is valid! Proceeding to the next page.")
+            # Implement redirection logic here
+        else:
+            messagebox.showerror("Error", "Please meet all password requirements before continuing.")
+
+    def load_diaristas(self):
+        try:
+            with open('diaristas.json', 'r', encoding='utf-8') as f:
+                diaristas = json.load(f)
+            # Display diaristas information
+            for diarista in diaristas:
+                print(diarista)  # Replace with GUI display logic
+        except Exception as e:
+            print(f"Error loading diaristas: {e}")
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = App(root)
+    root.mainloop()
