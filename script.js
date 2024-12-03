@@ -181,6 +181,20 @@ function validarSenha() {
     }
 }
 
+function validarSenhaDiarista() {
+    const lengthRequirement = document.getElementById('length-requirement');
+    const digitRequirement = document.getElementById('digit-requirement');
+    const nonDigitRequirement = document.getElementById('non-digit-requirement');
+
+    if (lengthRequirement.classList.contains('valid') &&
+        digitRequirement.classList.contains('valid') &&
+        nonDigitRequirement.classList.contains('valid')) {
+        window.location.href = 'cadastro-diarista4.html'; // Redireciona para a próxima página
+    } else {
+        alert("Por favor, preencha todos os requisitos da senha antes de continuar.");
+    }
+}
+
 document.querySelectorAll('.filtro-item').forEach(function (button) {
     button.addEventListener('click', function () {
         // Obter o id da seção associada ao botão clicado
