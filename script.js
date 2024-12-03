@@ -251,6 +251,19 @@ document.querySelectorAll('.filtro-item').forEach(function (button) {
     .catch(error => console.error('Erro ao carregar as diaristas:', error));
 };*/
 
+function marcarServico() {
+    // Exibe a mensagem de agendamento com a nova frase
+    const mensagem = document.getElementById('mensagem');
+    mensagem.textContent = 'Serviço agendado para a data disponível mais próxima! Você irá receber por email o horário disponível da diarista.';
+    mensagem.style.display = 'block';
+
+    // Esconde a mensagem após 5 segundos
+    setTimeout(function() {
+        mensagem.style.display = 'none';
+    }, 5000);
+}
+
+
 function carregarDiaristas() {
     fetch('diaristas.json')
         .then(response => {
@@ -309,13 +322,14 @@ function carregarDetalhes() {
                     const btn = document.createElement('button');
                     btn.classList.add('servico-item');
                     btn.textContent = servico;
+                    // Adiciona o evento de clique para exibir a mensagem
+                    btn.onclick = marcarServico;
                     servicosContainer.appendChild(btn);
                 });
             }
         })
         .catch(error => console.log(error));
 }
-
 
 function renderizarServicos(servicos) {
     const servicosContainer = document.querySelector('#servicos .servicos-container');
