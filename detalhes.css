@@ -419,17 +419,123 @@ header {
     }
 }
 
+/* Responsividade para telas pequenas (dispositivos móveis) */
 @media (max-width: 768px) {
-    .servico-item {
-        width: 100%;            /* Para telas pequenas, cada botão ocupa 100% */
-    }
-    
-    .right-column {
-        flex: 1 0 100%; /* A coluna direita ocupa 100% da largura em telas pequenas */
-        margin-top: 20px; /* Adiciona margem superior para garantir espaçamento */
+    /* Ajustando layout principal */
+    .layout {
+        flex-direction: column; /* Coloca as colunas em uma única coluna */
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
     }
 
-    .layout {
-        flex-direction: column; /* Faz a disposição das colunas ser em coluna em telas pequenas */
+    /* Coluna da esquerda */
+    .left-column {
+        flex: 0 0 100%; /* 100% de largura para telas pequenas */
+        padding: 10px;
+    }
+
+    /* Coluna da direita */
+    .right-column {
+        flex: 0 0 100%; /* 100% de largura para telas pequenas */
+        padding: 10px;
+    }
+
+    /* Coluna de baixo (pode ficar embaixo da coluna direita) */
+    .right-down-column {
+        flex: 0 0 100%; /* 100% de largura para telas pequenas */
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    /* Ajuste nas seções de serviços e pacotes */
+    .servicos {
+        width: 100%; /* Garante que os serviços ocupem 100% da largura */
+        padding: 15px;
+    }
+
+    /* Ajuste nos botões de serviço */
+    .servico-item {
+        width: 100%; /* Garantir que os botões de serviço ocupem a largura total */
+        padding: 12px;
+        text-align: center;
+    }
+
+    /* Caixa de filtros com orientação horizontal */
+    .filtros-caixa {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os filtros se ajustem em múltiplas linhas */
+        justify-content: space-between;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .filtro-item {
+        font-size: 1rem;
+        flex: 1 1 45%; /* Garante que os itens ocupem até 45% da largura, mas com flexibilidade */
+    }
+
+    /* Caixa de informações do diarista com orientação horizontal */
+    .profissional {
+        display: flex;
+        flex-direction: row; /* Garante que as informações do diarista fiquem lado a lado */
+        justify-content: flex-start;
+        gap: 15px; /* Espaço entre os elementos */
+        align-items: center;
+        text-align: left;
+        width: 100%; /* Garante que a caixa ocupe 100% da largura */
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .profissional img {
+        width: 100px; /* Ajuste o tamanho da imagem */
+        height: 100px;
+        border-radius: 50%; /* Para que a imagem tenha borda arredondada */
+    }
+
+    .profissional h4 {
+        font-size: 1.2rem; /* Ajuste no tamanho do nome do diarista */
+    }
+
+    .profissional p {
+        font-size: 1rem; /* Ajuste no tamanho do texto */
+    }
+
+    /* Botões de preço e informações */
+    .botao-preco {
+        width: 100%; /* Garante que o botão de preço ocupe toda a largura */
+        padding: 15px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    /* Ajuste no logo */
+    .logo-maior {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+
+    /* Ajuste no container de serviços */
+    .servicos-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Ajuste na parte de avaliações */
+    #avaliacoes p {
+        font-size: 1rem;
+    }
+
+    /* Manter a orientação dos filtros em telas pequenas */
+    .filtros-caixa {
+        flex-direction: row; /* Manter a orientação horizontal */
+        gap: 15px;
+        justify-content: flex-start;
+    }
+
+    .filtro-item {
+        width: auto;
     }
 }
+
